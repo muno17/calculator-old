@@ -1,0 +1,15 @@
+body {
+    font-family: ubuntu, sans-serif;
+    background: #7B8183;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#mainHeader {
+    color: #BC81BF;
+    text-shadow: 3px 3px 8px black;
+    font-size: 50px;
+    margin-left: 50px;
+}
