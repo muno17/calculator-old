@@ -2,11 +2,11 @@ body {
     font-family: ubuntu, sans-serif;
     background: #7B8183;
     margin: 0;
-    height: 1000px;
+    height: 800px;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
 
@@ -14,5 +14,6 @@ body {
     color: #BC81BF;
     text-shadow: 3px 3px 8px black;
     font-size: 50px;
+    margin: 0;
     margin-left: 50px;
 }
