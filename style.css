@@ -17,3 +17,10 @@ body {
     margin: 0;
     margin-left: 50px;
 }
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 600px;
+}
