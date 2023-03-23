@@ -1,10 +1,13 @@
 body {
     font-family: ubuntu, sans-serif;
     background: #7B8183;
+    margin: 0;
+    height: 1000px;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 #mainHeader {
