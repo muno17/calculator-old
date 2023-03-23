@@ -15,7 +15,6 @@ body {
     text-shadow: 3px 3px 8px black;
     font-size: 50px;
     margin: 0;
-    margin-left: 50px;
 }
 
 .calculator {
@@ -39,4 +38,13 @@ body {
     text-shadow: 3px 3px 7px black;
     border-radius: 10px;
     box-shadow: 3px 3px 10px black;
+}
+
+.buttonRow {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 350px;
+    margin: 0;
+    padding: 0px;
 }
