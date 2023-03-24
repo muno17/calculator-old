@@ -21,12 +21,15 @@ function numberDisplay(num) {
         return;
     } else {
         if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
-        displayValue.innerHTML = num;
+            if (x > 0) {
+                displayValue.innerHTML = x;
+            } else {
+                displayValue.innerHTML = num;
+            }
         } else {
-            
+            console.log('x in numberDisplay = ' + x);
 
             displayValue.innerHTML += num;
-
         }
     }
 };
@@ -41,7 +44,6 @@ equals.addEventListener('click', () => {
         return;
     } else {
         y = displayValue.innerHTML;
-
         // run operate() using values gathered in ^
         // store operate() return value in displayValue
         displayValue.innerHTML = displayValue.innerHTML + ' = ';
@@ -73,16 +75,16 @@ operator.forEach(oper => {
         // check which operator to assign to op
         if (oper.innerHTML === '+') {
             op = 'add';
-            displayValue.innerHTML = displayValue.innerHTML + ' + '
+            displayValue.innerHTML = x + ' + '
         } else if (oper.innerHTML === '-') {
             op = 'subtract';
-            displayValue.innerHTML = displayValue.innerHTML + ' - '
+            displayValue.innerHTML = x + ' - '
         } else if (oper.innerHTML === '*') {
             op = 'multiply';
-            displayValue.innerHTML = displayValue.innerHTML + ' * '
+            displayValue.innerHTML = x + ' * '
         } else if (oper.innerHTML === '/') {
             op = 'divide';
-            displayValue.innerHTML = displayValue.innerHTML + ' / '
+            displayValue.innerHTML = x + ' / '
         };
     });
 });
