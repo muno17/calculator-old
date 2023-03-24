@@ -39,7 +39,7 @@ body {
 .display {
     display: flex;
     flex-direction: column;
-    background: #DFEDFA;
+    background: #DAEBFA;
     justify-content: space-evenly;
     width: 350px;
     height: 100px;
@@ -49,8 +49,7 @@ body {
     box-shadow: 3px 3px 10px black;
     border-radius: 10px;
     border-style: solid;
-    font-size: 20px;
-    flex-wrap: wrap;
+    font-size: 25px;
 }
 
 #main {
