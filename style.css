@@ -40,26 +40,40 @@ body {
     display: flex;
     flex-direction: column;
     background: #DFEDFA;
+    justify-content: space-evenly;
     width: 350px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    height: 100px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     text-shadow: 3px 3px 70px black;
     box-shadow: 3px 3px 10px black;
     border-radius: 10px;
     border-style: solid;
-    font-size: 40px;
+    font-size: 20px;
     flex-wrap: wrap;
 }
 
 #main {
     display: flex;
+    width: 350px;
     justify-content: flex-start;
+    flex: 2 1 auto;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+    padding-left: 5px;
 }
 
-#answer {
+#solution {
     display: flex;
+    width: 350px;
     justify-content: flex-end;
+    padding-right: 5px;
 }
+
+#displayDiv {
+    margin: 0;
+    padding: 0;
+} 
 
 .topRow {
     display: flex;

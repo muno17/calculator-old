@@ -6,9 +6,10 @@ let signY = '+';
 
 // display current values
 let displayValue = document.getElementById('main');
+let displaySolution = document.getElementById('solution');
 
 function numberDisplay(num) {
-    if (displayValue.innerHTML.length > 14) {
+    if (displayValue.innerHTML.length > 50) {
         return;
     } else {
         if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
@@ -40,7 +41,7 @@ equals.addEventListener('click', () => {
 
         // run operate() using values gathered in ^
         // store operate() return value in displayValue
-        displayValue.innerHTML = operate(op, x, y);
+        displaySolution.innerHTML = operate(op, x, y);
     }
 });
 
@@ -57,6 +58,7 @@ operator.forEach(oper => {
             displayValue.innerHTML = operate(op, x, y);
             x = displayValue.innerHTML;
             displayValue.innerHTML = 0;
+            displaySolution.innerHTML = x;
         } else {
             x = displayValue.innerHTML;
             displayValue.innerHTML = 0;
@@ -109,6 +111,7 @@ clear.addEventListener('click', () => {
     y = 0;
     op = 0;
     displayValue.innerHTML = 0;
+    displaySolution.innerHTML = '';
 });
 
 // when delete is pressed - delete last digit added to displayValue
@@ -142,7 +145,7 @@ function operate(op, x, y) {
 
     // round decimals to not allow overflow
     if (z.toString().length > 14) {
-        return z.toFixed(14);
+        return z.toFixed(19);
     } else {
         return z;
     };
