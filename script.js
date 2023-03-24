@@ -59,7 +59,11 @@ let posNeg = document.getElementById('posNeg');
 posNeg.addEventListener('click', () => {
     if (sign === '+') {
         sign = '-'
-        displayValue.innerHTML = '-' + displayValue.innerHTML
+        if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
+            displayValue.innerHTML = '-';
+        } else {
+            displayValue.innerHTML = '-' + displayValue.innerHTML
+        }
     } else if (sign === '-') {
         sign = '+'
     }
@@ -84,7 +88,7 @@ deleteButton.addEventListener('click', () => {
 });
 
 
-function numberDisplay(num, sign) {
+function numberDisplay(num) {
     if (displayValue.innerHTML.length > 16) {
         return;
     } else {
