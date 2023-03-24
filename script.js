@@ -51,8 +51,6 @@ equals.addEventListener('click', () => {
 
 // if = pressed without y value, do not do anything
 
-// do not let user divide by 0 - provide error message
-
 // ??? add keyboard functionality ???
 
 
@@ -100,7 +98,11 @@ function operate(op, x, y) {
     } else if (op === 'multiply') {
         return multiply(x, y);
     } else if (op === 'divide') {
-        return divide(x, y);
+        if (y === 0){
+            return "can't do that you noob";
+        } else if (y > 0) {
+            return divide(x, y);
+        }
     }
 };
 
