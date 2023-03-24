@@ -18,7 +18,7 @@ body {
 }
 
 .calculator {
-    width: 450px;
+    width: 420px;
     height: 500px;
     background: #DBDBDB;
     display: flex;
@@ -29,6 +29,8 @@ body {
     box-shadow: 3px 3px 10px black;
     border-style: solid;
     padding: 5px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .display {
@@ -36,8 +38,9 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     background: #DFEDFA;
-    width: 380px;
-    padding: 10px;
+    width: 350px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-shadow: 3px 3px 50px black;
     box-shadow: 3px 3px 10px black;
     border-radius: 10px;

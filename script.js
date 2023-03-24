@@ -5,6 +5,19 @@ let signX = '+';
 let signY = '+'
 let displayValue = document.getElementById('display')
 
+// display current values
+function numberDisplay(num) {
+    if (displayValue.innerHTML.length > 14) {
+        return;
+    } else {
+        if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
+        displayValue.innerHTML = num;
+        } else {
+            displayValue.innerHTML += num;
+        }
+    }
+};
+
 // listen for a button to be pressed
 // add buttons to displayValue until operator is pressed
 let calcNumber= document.querySelectorAll('.number');
@@ -21,8 +34,12 @@ operator.forEach(oper => {
         if (op !== 0) {
             y = displayValue.innerHTML;
             // run operate() and assign to x
-            x = operate(op, x, y);
-            displayValue.innerHTML = x;
+            displayValue.innerHTML = operate(op, x, y);
+            x = displayValue.innerHTML;
+
+            // ** taking value and immediately concatenating to displayValue
+
+
         } else {
             x = displayValue.innerHTML;
             displayValue.innerHTML = 0;
@@ -112,18 +129,6 @@ deleteButton.addEventListener('click', () => {
     }
 });
 
-// display current values
-function numberDisplay(num) {
-    if (displayValue.innerHTML.length > 16) {
-        return;
-    } else {
-        if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
-        displayValue.innerHTML = num;
-        } else {
-            displayValue.innerHTML += num;
-        }
-    }
-}
 
 function operate(op, x, y) {
     x = parseInt(x);
