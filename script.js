@@ -24,8 +24,9 @@ function numberDisplay(num) {
         displayValue.innerHTML = num;
         } else {
             
+
             displayValue.innerHTML += num;
-            //console.log('x value in num display = ' + x)
+
         }
     }
 };
@@ -55,7 +56,6 @@ equals.addEventListener('click', () => {
 let operator = document.querySelectorAll('.operator');
 operator.forEach(oper => {
     oper.addEventListener('click', () => {
-        console.log('x going into operator = ' + x)
         // if op already has a value, run operation first and assign value to x
         if (op !== 0) {
             y = displayValue.innerHTML;
@@ -70,11 +70,8 @@ operator.forEach(oper => {
             x = displayValue.innerHTML;
             displayValue.innerHTML = 0;
         }
-        //console.log('x value in middle of operator = ' + x)
         // check which operator to assign to op
         if (oper.innerHTML === '+') {
-            
-            //console.log('x value going out of operator = ' + x);
             op = 'add';
             displayValue.innerHTML = displayValue.innerHTML + ' + '
         } else if (oper.innerHTML === '-') {
@@ -138,23 +135,24 @@ deleteButton.addEventListener('click', () => {
 
 
 function operate(op, x, y) {
-    console.log('x value going into operate = ' + x)
-    console.log('y value going into operate = ' + y)
     x = parseFloat(x);
     z = 0;
-
 
     if (op === 'add') {
         let addArr = displayValue.innerHTML.split('+')
         let y = parseFloat(addArr[1]); 
-        console.log('x value going out of operate() = ' + x);
-        console.log('y value going out of operate() = ' + y);
         z = add(x, y);
     } else if (op === 'subtract') {
+        let subArr = displayValue.innerHTML.split('-')
+        let y = parseFloat(subArr[1]); 
         z = subtract(x, y);
     } else if (op === 'multiply') {
+        let multArr = displayValue.innerHTML.split('*')
+        let y = parseFloat(multArr[1]); 
         z = multiply(x, y);
     } else if (op === 'divide') {
+        let divArr = displayValue.innerHTML.split('/')
+        let y = parseFloat(divArr[1]); 
         if (y === 0){
             return "can't do that, nerd";
         } else if (y > 0) {
@@ -163,8 +161,8 @@ function operate(op, x, y) {
     };
 
     // round decimals to not allow overflow
-    if (z.toString().length > 14) {
-        return z.toFixed(19);
+    if (z.toString().length > 25) {
+        return z.toFixed(25);
     } else {
         return z;
     };
