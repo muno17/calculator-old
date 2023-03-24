@@ -65,6 +65,7 @@ posNeg.addEventListener('click', () => {
             displayValue.innerHTML = '-' + displayValue.innerHTML
         }
     } else if (sign === '-') {
+        displayValue.innerHTML = displayValue.innerHTML.slice(1, displayValue.length)
         sign = '+'
     }
 })
