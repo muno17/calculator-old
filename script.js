@@ -25,7 +25,7 @@ function numberDisplay(num) {
         } else {
             
             displayValue.innerHTML += num;
-            console.log('x value in num display = ' + x)
+            //console.log('x value in num display = ' + x)
         }
     }
 };
@@ -44,7 +44,9 @@ equals.addEventListener('click', () => {
         // run operate() using values gathered in ^
         // store operate() return value in displayValue
         displayValue.innerHTML = displayValue.innerHTML + ' = ';
-        displaySolution.innerHTML = operate(op, x, y);
+        //displaySolution.innerHTML = operate(op, x, y);
+        let solution = operate(op, x, y).toString().split('=');
+        displaySolution.innerHTML = solution[0]; 
     }
 });
 
@@ -57,20 +59,22 @@ operator.forEach(oper => {
         // if op already has a value, run operation first and assign value to x
         if (op !== 0) {
             y = displayValue.innerHTML;
+            
             // run operate() and assign to x
             displayValue.innerHTML = operate(op, x, y) + ' = ';
             x = displayValue.innerHTML;
-            console.log('y val is = ' + y)
-            displaySolution.innerHTML = x;
+            //console.log('y val is = ' + y)
+            let solution = x.split('=');
+            displaySolution.innerHTML = solution[0];
         } else {
             x = displayValue.innerHTML;
             displayValue.innerHTML = 0;
         }
-        console.log('x value in middle of operator = ' + x)
+        //console.log('x value in middle of operator = ' + x)
         // check which operator to assign to op
         if (oper.innerHTML === '+') {
             
-            console.log('x value going out of operator = ' + x);
+            //console.log('x value going out of operator = ' + x);
             op = 'add';
             displayValue.innerHTML = displayValue.innerHTML + ' + '
         } else if (oper.innerHTML === '-') {
