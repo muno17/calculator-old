@@ -3,17 +3,23 @@ let y = 0;
 let op = '';
 let displayValue = document.getElementById('display')
 
+// listen for a button to be pressed
+// add buttons to displayValue until operator is pressed
 let calcNumber= document.querySelectorAll('.number');
 calcNumber.forEach(num => {
     num.addEventListener('click', () => numberDisplay(num.innerHTML))
 });
 
-
-
-// listen for a button to be pressed
-// add buttons to displayValue until operator is pressed
 // store displayValue in variable x when operator is pressed
 // when operator is pressed store value in variable op
+// let operator = document.querySelectorAll('.operator');
+// operator.forEach(oper => {
+
+// })
+
+
+
+
 // listen for next buttons to be pressed
 // add buttons to displayValue until = is pressed
 // store displayValue in variable y when = is pressed
@@ -21,6 +27,13 @@ calcNumber.forEach(num => {
 // store operate() return value in displayValue
 
 // when clear is pressed - make valuex x=0 y=0 op=''
+let clear = document.getElementById('clear');
+clear.addEventListener('click', () => {
+    x = 0;
+    y = 0;
+    op = '';
+    displayValue.innerHTML = 0;
+})
 
 // when delete is pressed - delete last digit added to displayValue
 
@@ -31,7 +44,11 @@ function numberDisplay(num) {
     if (displayValue.innerHTML.length > 16) {
         return;
     } else {
-        displayValue.innerHTML += num;
+        if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
+        displayValue.innerHTML = num;
+        } else {
+            displayValue.innerHTML += num;
+        }
     }
 }
 
