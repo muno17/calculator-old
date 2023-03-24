@@ -38,7 +38,7 @@ body {
     width: 380px;
     height: 50px;
     padding: 10px;
-    text-shadow: 3px 3px 9px black;
+    text-shadow: 3px 3px 50px black;
     box-shadow: 3px 3px 10px black;
     border-radius: 10px;
     border-style: solid;
@@ -49,25 +49,32 @@ body {
 .topRow {
     display: flex;
     justify-content: space-around;
-    gap: 20px;
+    gap: 10px;
+    width: 350px;
 }
 
 .topButton {
     width: 150px;
     height: 60px;
-    text-shadow: 3px 3px 7px black;
+    text-shadow: 3px 3px 50px black;
     border-radius: 10px;
     box-shadow: 3px 3px 10px black;
 }
 
+#plusNeg {
+    font-size: 35px;
+    color: white;
+    background: #ECC987;
+}
+
 #clear {
-    background: #EE9ABD;
+    background: #9AB7EE;
     font-size: 35px;
     color: white;
 }
 
 #delete {
-    background: #9AB7EE;
+    background: #EE9ABD;
     font-size: 35px;
     color: white;
 }
@@ -78,7 +85,7 @@ body {
     height: 50px;
     font-size: 25px;
     color: white;
-    text-shadow: 3px 3px 7px black;
+    text-shadow: 3px 3px 50px black;
     border-radius: 10px;
     box-shadow: 3px 3px 10px black;
 }
@@ -96,5 +103,5 @@ body {
 }
 
 #equals {
-    background: #ECC987;
+    background: #C1E1B6;
 }

@@ -99,7 +99,7 @@ function operate(op, x, y) {
         return multiply(x, y);
     } else if (op === 'divide') {
         if (y === 0){
-            return "can't do that you noob";
+            return "can't do that, nerd";
         } else if (y > 0) {
             return divide(x, y);
         }
