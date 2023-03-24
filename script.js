@@ -51,19 +51,16 @@ equals.addEventListener('click', () => {
     }
 });
 
-
 // assign operator, run operate() if operator already exists
 let operator = document.querySelectorAll('.operator');
 operator.forEach(oper => {
     oper.addEventListener('click', () => {
-
         // if op already has a value, run operation first and assign value to x
         if (op !== 0) {
             y = displayValue.innerHTML;
             // run operate() and assign to x
             displayValue.innerHTML = operate(op, x, y);
             x = displayValue.innerHTML;
-            //console.log('y val is = ' + y)
             let solution = x.split('=');
             displaySolution.innerHTML = solution[0];
         } else {
@@ -87,7 +84,6 @@ operator.forEach(oper => {
     });
 });
 
-
 // change sign to + or - when +/- is pressed
 let posNeg = document.getElementById('posNeg');
 posNeg.addEventListener('click', () => {
@@ -110,7 +106,6 @@ posNeg.addEventListener('click', () => {
     };
 });
 
-// when clear is pressed - make valuex x=0 y=0 op=''
 let clear = document.getElementById('clear');
 clear.addEventListener('click', () => {
     x = 0;
@@ -120,7 +115,6 @@ clear.addEventListener('click', () => {
     displaySolution.innerHTML = '';
 });
 
-// when delete is pressed - delete last digit added to displayValue
 let deleteButton = document.getElementById('delete');
 deleteButton.addEventListener('click', () => {
     displayValue.innerHTML = displayValue.innerHTML.slice(0, (displayValue.innerHTML.length - 1))
@@ -129,11 +123,9 @@ deleteButton.addEventListener('click', () => {
     };
 });
 
-
 function operate(op, x, y) {
     x = parseFloat(x);
     z = 0;
-
     if (op === 'add') {
         let addArr = displayValue.innerHTML.split('+')
         let y = parseFloat(addArr[1]); 
@@ -155,9 +147,7 @@ function operate(op, x, y) {
             z = divide(x, y);
         }
     };
-
     signY = '+';
-
     // round decimals to not allow overflow
     if (z.toString().length > 25) {
         return z.toFixed(25);
