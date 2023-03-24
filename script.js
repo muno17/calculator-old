@@ -1,6 +1,6 @@
 let x = 0;
 let y = 0;
-let op = '';
+let op = 0;
 let displayValue = document.getElementById('display')
 
 // listen for a button to be pressed
@@ -10,19 +10,39 @@ calcNumber.forEach(num => {
     num.addEventListener('click', () => numberDisplay(num.innerHTML))
 });
 
-// store displayValue in variable x when operator is pressed
-// when operator is pressed store value in variable op
-// let operator = document.querySelectorAll('.operator');
-// operator.forEach(oper => {
 
-// })
+let operator = document.querySelectorAll('.operator');
+operator.forEach(oper => {
+    oper.addEventListener('click', () => {
+        x = displayValue.innerHTML;
+        displayValue.innerHTML = 0;
+        console.log(x);
+
+        // listen for next buttons to be pressed
+        // add buttons to displayValue until = is pressed
+        // store displayValue in variable y when = is pressed
+        let equals = document.getElementById('equals');
+        equals.addEventListener('click', () => {
+            y = displayValue.innerHTML;
+        });
+
+        // run operator
+        if (oper.innerHTML === '+') {
+            op = add(x, y);
+        } else if (oper.innerHTML === '-') {
+            op = subtract(x, y);
+        } else if (oper.innerHTML === '*') {
+            op = multiply(x, y);
+        } else if (oper.innerHTML === '/') {
+            op = divide(x, y);
+        }
+
+        displayValue.innerHTML = op;
+    })
+})
 
 
 
-
-// listen for next buttons to be pressed
-// add buttons to displayValue until = is pressed
-// store displayValue in variable y when = is pressed
 // run operate() using values gathered in ^
 // store operate() return value in displayValue
 
