@@ -1,14 +1,15 @@
 let x = 0;
 let y = 0;
 let op = 0;
-let sign = '+';
+let signX = '+';
+let signY = '+'
 let displayValue = document.getElementById('display')
 
 // listen for a button to be pressed
 // add buttons to displayValue until operator is pressed
 let calcNumber= document.querySelectorAll('.number');
 calcNumber.forEach(num => {
-    num.addEventListener('click', () => numberDisplay(num.innerHTML, sign))
+    num.addEventListener('click', () => numberDisplay(num.innerHTML, signX, signY))
 });
 
 
@@ -57,16 +58,26 @@ equals.addEventListener('click', () => {
 // change sign to + or - when +/- is pressed
 let posNeg = document.getElementById('posNeg');
 posNeg.addEventListener('click', () => {
-    if (sign === '+') {
-        sign = '-'
+    if (signX === '+' && op === 0) {
+        signX = '-'
         if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
             displayValue.innerHTML = '-';
         } else {
-            displayValue.innerHTML = '-' + displayValue.innerHTML
+            displayValue.innerHTML = '-' + displayValue.innerHTML;
         }
-    } else if (sign === '-') {
-        displayValue.innerHTML = displayValue.innerHTML.slice(1, displayValue.length)
-        sign = '+'
+    } else if (signX === '-' && op === 0) {
+        displayValue.innerHTML = displayValue.innerHTML.slice(1, displayValue.length);
+        signX = '+';
+    } else if (signY === '+' && op !== 0) {
+        signY = '-'
+        if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
+            displayValue.innerHTML = '-';
+        } else {
+            displayValue.innerHTML = '-' + displayValue.innerHTML;
+        }
+    } else if (signY === '-' && op !== 0) {
+        displayValue.innerHTML = displayValue.innerHTML.slice(1, displayValue.length);
+        signY = '+';
     }
 })
 
