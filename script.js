@@ -16,8 +16,18 @@ calcNumber.forEach(num => {
 let operator = document.querySelectorAll('.operator');
 operator.forEach(oper => {
     oper.addEventListener('click', () => {
-        x = displayValue.innerHTML;
-        displayValue.innerHTML = 0;
+
+        // if op already has a value, run operation first and assign value to x
+        if (op !== 0) {
+            y = displayValue.innerHTML;
+            // run operate() and assign to x
+            x = operate(op, x, y);
+            displayValue.innerHTML = x;
+        } else {
+            x = displayValue.innerHTML;
+            displayValue.innerHTML = 0;
+        }
+
 
         // check which operator to assign to op
         if (oper.innerHTML === '+') {
@@ -28,7 +38,8 @@ operator.forEach(oper => {
             op = 'multiply';
         } else if (oper.innerHTML === '/') {
             op = 'divide';
-        }
+        };
+
         console.log('x = ' + x);
         console.log(op)
     });
@@ -39,6 +50,7 @@ operator.forEach(oper => {
 // store displayValue in variable y when = is pressed
 let equals = document.getElementById('equals');
 equals.addEventListener('click', () => {
+    // if = pressed without y value, do not do anything
     if (x === 0 && y === 0) {
         return;
     } else {
@@ -51,11 +63,8 @@ equals.addEventListener('click', () => {
     console.log('y = ' + y);
 });
 
-// allow user to string multiple operations together, evaluate after each one and assign to x, y = 0
-
+// add functionality to decimal
 // round answers, do not let decimal places overflow
-
-// if = pressed without y value, do not do anything
 
 // ??? add keyboard functionality ???
 
