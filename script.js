@@ -16,30 +16,31 @@ operator.forEach(oper => {
     oper.addEventListener('click', () => {
         x = displayValue.innerHTML;
         displayValue.innerHTML = 0;
-        console.log(x);
-
-        // listen for next buttons to be pressed
-        // add buttons to displayValue until = is pressed
-        // store displayValue in variable y when = is pressed
-        let equals = document.getElementById('equals');
-        equals.addEventListener('click', () => {
-            y = displayValue.innerHTML;
-        });
 
         // run operator
         if (oper.innerHTML === '+') {
-            op = add(x, y);
+            op = 'add';
         } else if (oper.innerHTML === '-') {
-            op = subtract(x, y);
+            op = 'subtract';
         } else if (oper.innerHTML === '*') {
-            op = multiply(x, y);
+            op = 'multiply';
         } else if (oper.innerHTML === '/') {
-            op = divide(x, y);
+            op = 'divide';
         }
 
-        displayValue.innerHTML = op;
-    })
-})
+        console.log(x);
+        console.log(op)
+
+    });
+});
+
+// listen for next buttons to be pressed
+// add buttons to displayValue until = is pressed
+// store displayValue in variable y when = is pressed
+let equals = document.getElementById('equals');
+equals.addEventListener('click', () => {
+    y = displayValue.innerHTML;
+});
 
 
 
@@ -78,9 +79,9 @@ function numberDisplay(num) {
     }
 }
 
-function operate(op, x, y) {
-    return op(x, y);
-}
+// function operate(op, x, y) {
+//     return op(x, y);
+// }
 
 
 function add(x, y) {
