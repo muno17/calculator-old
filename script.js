@@ -29,7 +29,7 @@ operator.forEach(oper => {
         } else if (oper.innerHTML === '/') {
             op = 'divide';
         }
-        console.log(x);
+        console.log('x = ' + x);
         console.log(op)
     });
 });
@@ -39,15 +39,19 @@ operator.forEach(oper => {
 // store displayValue in variable y when = is pressed
 let equals = document.getElementById('equals');
 equals.addEventListener('click', () => {
-    y = displayValue.innerHTML;
+    if (x === 0 && y === 0) {
+        return;
+    } else {
+        y = displayValue.innerHTML;
 
-    // run operate() using values gathered in ^
-    // store operate() return value in displayValue
-    displayValue.innerHTML = operate(op, x, y);
-    console.log(y);
+        // run operate() using values gathered in ^
+        // store operate() return value in displayValue
+        displayValue.innerHTML = operate(op, x, y);
+    }
+    console.log('y = ' + y);
 });
 
-// allow user to string multiple operations together, evaluate after each one
+// allow user to string multiple operations together, evaluate after each one and assign to x, y = 0
 
 // round answers, do not let decimal places overflow
 
