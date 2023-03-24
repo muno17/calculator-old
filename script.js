@@ -1,13 +1,14 @@
 let x = 0;
 let y = 0;
 let op = 0;
+let sign = '+';
 let displayValue = document.getElementById('display')
 
 // listen for a button to be pressed
 // add buttons to displayValue until operator is pressed
 let calcNumber= document.querySelectorAll('.number');
 calcNumber.forEach(num => {
-    num.addEventListener('click', () => numberDisplay(num.innerHTML))
+    num.addEventListener('click', () => numberDisplay(num.innerHTML, sign))
 });
 
 
@@ -55,6 +56,14 @@ equals.addEventListener('click', () => {
 
 // change sign to + or - when +/- is pressed
 let posNeg = document.getElementById('posNeg');
+posNeg.addEventListener('click', () => {
+    if (sign === '+') {
+        sign = '-'
+        displayValue.innerHTML = '-' + displayValue.innerHTML
+    } else if (sign === '-') {
+        sign = '+'
+    }
+})
 
 // when clear is pressed - make valuex x=0 y=0 op=''
 let clear = document.getElementById('clear');
@@ -75,8 +84,7 @@ deleteButton.addEventListener('click', () => {
 });
 
 
-function numberDisplay(num) {
-    // *** need to find way to not allow more than 17 digits**** 
+function numberDisplay(num, sign) {
     if (displayValue.innerHTML.length > 16) {
         return;
     } else {
