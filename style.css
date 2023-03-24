@@ -13,7 +13,7 @@ body {
 #mainHeader {
     color: #BC81BF;
     text-shadow: 3px 3px 8px black;
-    font-size: 50px;
+    font-size: 80px;
     margin: 0;
 }
 
@@ -36,14 +36,13 @@ body {
     align-items: flex-end;
     background: #DFEDFA;
     width: 380px;
-    height: 60px;
-    text-shadow: 3px 3px 7px black;
+    height: 50px;
+    padding: 10px;
+    text-shadow: 3px 3px 9px black;
     box-shadow: 3px 3px 10px black;
     border-radius: 10px;
     border-style: solid;
-    border-color: ;
     font-size: 40px;
-
 }
 
 .topRow {
