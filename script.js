@@ -3,38 +3,12 @@ let y = 0;
 let op = '';
 let displayValue = document.getElementById('display')
 
-// let calcButton = document.getElementsByClassName('.number');
-// calcButton.addEventListener('click', () => {console.log('hey')})
+let calcNumber= document.querySelectorAll('.number');
+calcNumber.forEach(num => {
+    num.addEventListener('click', () => numberDisplay(num.innerHTML))
+});
 
-let one = document.getElementById('1');
-one.addEventListener('click', () => numberDisplay(one.innerHTML))
 
-let two = document.getElementById('2');
-two.addEventListener('click', () => numberDisplay(two.innerHTML))
-
-let three = document.getElementById('3');
-three.addEventListener('click', () => numberDisplay(three.innerHTML))
-
-let four = document.getElementById('4');
-four.addEventListener('click', () => numberDisplay(four.innerHTML))
-
-let five= document.getElementById('5');
-five.addEventListener('click', () => numberDisplay(five.innerHTML))
-
-let six = document.getElementById('6');
-six.addEventListener('click', () => numberDisplay(six.innerHTML))
-
-let seven = document.getElementById('7');
-seven.addEventListener('click', () => numberDisplay(seven.innerHTML))
-
-let eight = document.getElementById('8');
-eight.addEventListener('click', () => numberDisplay(eight.innerHTML))
-
-let nine = document.getElementById('9');
-nine.addEventListener('click', () => numberDisplay(nine.innerHTML))
-
-let zero = document.getElementById('0');
-zero.addEventListener('click', () => numberDisplay(zero.innerHTML))
 
 // listen for a button to be pressed
 // add buttons to displayValue until operator is pressed
@@ -81,3 +55,36 @@ function multiply(x, y) {
 function divide(x, y) {
     return x /y;
 }
+
+
+
+
+// let one = document.getElementById('1');
+// one.addEventListener('click', () => numberDisplay(one.innerHTML))
+
+// let two = document.getElementById('2');
+// two.addEventListener('click', () => numberDisplay(two.innerHTML))
+
+// let three = document.getElementById('3');
+// three.addEventListener('click', () => numberDisplay(three.innerHTML))
+
+// let four = document.getElementById('4');
+// four.addEventListener('click', () => numberDisplay(four.innerHTML))
+
+// let five= document.getElementById('5');
+// five.addEventListener('click', () => numberDisplay(five.innerHTML))
+
+// let six = document.getElementById('6');
+// six.addEventListener('click', () => numberDisplay(six.innerHTML))
+
+// let seven = document.getElementById('7');
+// seven.addEventListener('click', () => numberDisplay(seven.innerHTML))
+
+// let eight = document.getElementById('8');
+// eight.addEventListener('click', () => numberDisplay(eight.innerHTML))
+
+// let nine = document.getElementById('9');
+// nine.addEventListener('click', () => numberDisplay(nine.innerHTML))
+
+// let zero = document.getElementById('0');
+// zero.addEventListener('click', () => numberDisplay(zero.innerHTML))
