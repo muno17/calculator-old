@@ -5,7 +5,7 @@ let signX = '+';
 let signY = '+';
 
 // display current values
-let displayValue = document.getElementById('display');
+let displayValue = document.getElementById('main');
 
 function numberDisplay(num) {
     if (displayValue.innerHTML.length > 14) {

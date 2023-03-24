@@ -38,18 +38,27 @@ body {
 
 .display {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    flex-direction: column;
     background: #DFEDFA;
     width: 350px;
     padding-top: 5px;
     padding-bottom: 5px;
-    text-shadow: 3px 3px 50px black;
+    text-shadow: 3px 3px 70px black;
     box-shadow: 3px 3px 10px black;
     border-radius: 10px;
     border-style: solid;
     font-size: 40px;
     flex-wrap: wrap;
+}
+
+#main {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#answer {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .topRow {
