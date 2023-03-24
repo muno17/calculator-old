@@ -81,9 +81,9 @@ function numberDisplay(num) {
     }
 }
 
-// function operate(op, x, y) {
-//     return op(x, y);
-// }
+function operate(op, x, y) {
+    return op(x, y);
+}
 
 
 function add(x, y) {
@@ -101,36 +101,3 @@ function multiply(x, y) {
 function divide(x, y) {
     return x /y;
 }
-
-
-
-
-// let one = document.getElementById('1');
-// one.addEventListener('click', () => numberDisplay(one.innerHTML))
-
-// let two = document.getElementById('2');
-// two.addEventListener('click', () => numberDisplay(two.innerHTML))
-
-// let three = document.getElementById('3');
-// three.addEventListener('click', () => numberDisplay(three.innerHTML))
-
-// let four = document.getElementById('4');
-// four.addEventListener('click', () => numberDisplay(four.innerHTML))
-
-// let five= document.getElementById('5');
-// five.addEventListener('click', () => numberDisplay(five.innerHTML))
-
-// let six = document.getElementById('6');
-// six.addEventListener('click', () => numberDisplay(six.innerHTML))
-
-// let seven = document.getElementById('7');
-// seven.addEventListener('click', () => numberDisplay(seven.innerHTML))
-
-// let eight = document.getElementById('8');
-// eight.addEventListener('click', () => numberDisplay(eight.innerHTML))
-
-// let nine = document.getElementById('9');
-// nine.addEventListener('click', () => numberDisplay(nine.innerHTML))
-
-// let zero = document.getElementById('0');
-// zero.addEventListener('click', () => numberDisplay(zero.innerHTML))
