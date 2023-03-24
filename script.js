@@ -136,20 +136,26 @@ deleteButton.addEventListener('click', () => {
 function operate(op, x, y) {
     x = parseFloat(x);
     y = parseFloat(y);
+    z = 0;
 
     if (op === 'add') {
-        return add(x, y);
+        z = add(x, y);
     } else if (op === 'subtract') {
-        return subtract(x, y);
+        z = subtract(x, y);
     } else if (op === 'multiply') {
-        return multiply(x, y);
+        z = multiply(x, y);
     } else if (op === 'divide') {
         if (y === 0){
             return "can't do that, nerd";
         } else if (y > 0) {
-            return divide(x, y);
+            z = divide(x, y);
         }
     }
+
+    if (z.toString().length > 14) {
+        return z.toFixed(14)
+    }
+    return z;
 };
 
 function add(x, y) {
