@@ -17,7 +17,7 @@ operator.forEach(oper => {
         x = displayValue.innerHTML;
         displayValue.innerHTML = 0;
 
-        // run operator
+        // check which operator to assign to op
         if (oper.innerHTML === '+') {
             op = 'add';
         } else if (oper.innerHTML === '-') {
@@ -27,10 +27,8 @@ operator.forEach(oper => {
         } else if (oper.innerHTML === '/') {
             op = 'divide';
         }
-
         console.log(x);
         console.log(op)
-
     });
 });
 
@@ -43,9 +41,19 @@ equals.addEventListener('click', () => {
 
     // run operate() using values gathered in ^
     // store operate() return value in displayValue
-    displayValue.innerHTML = 0;
+    displayValue.innerHTML = 0; //operate(op, x, y);
     console.log(y);
 });
+
+// allow user to string multiple operations together, evaluate after each one
+
+// round answers, do not let decimal places overflow
+
+// if = pressed without y value, do not do anything
+
+// do not let user divide by 0 - provide error message
+
+// ??? add keyboard functionality ???
 
 
 
@@ -54,7 +62,7 @@ let clear = document.getElementById('clear');
 clear.addEventListener('click', () => {
     x = 0;
     y = 0;
-    op = '';
+    op = 0;
     displayValue.innerHTML = 0;
 })
 
