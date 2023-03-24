@@ -35,8 +35,14 @@ clear.addEventListener('click', () => {
     displayValue.innerHTML = 0;
 })
 
-// when delete is pressed - delete last digit added to displayValue
-
+//when delete is pressed - delete last digit added to displayValue
+let deleteButton = document.getElementById('delete');
+deleteButton.addEventListener('click', () => {
+    displayValue.innerHTML = displayValue.innerHTML.slice(0, (displayValue.innerHTML.length - 1))
+    if (displayValue.innerHTML.length === 0) {
+        displayValue.innerHTML = 0;
+    }
+})
 
 
 function numberDisplay(num) {
