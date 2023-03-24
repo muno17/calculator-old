@@ -27,8 +27,6 @@ function numberDisplay(num) {
                 displayValue.innerHTML = num;
             }
         } else {
-            console.log('x in numberDisplay = ' + x);
-
             displayValue.innerHTML += num;
         }
     }
@@ -58,12 +56,12 @@ equals.addEventListener('click', () => {
 let operator = document.querySelectorAll('.operator');
 operator.forEach(oper => {
     oper.addEventListener('click', () => {
+
         // if op already has a value, run operation first and assign value to x
         if (op !== 0) {
             y = displayValue.innerHTML;
-            
             // run operate() and assign to x
-            displayValue.innerHTML = operate(op, x, y) + ' = ';
+            displayValue.innerHTML = operate(op, x, y);
             x = displayValue.innerHTML;
             //console.log('y val is = ' + y)
             let solution = x.split('=');
