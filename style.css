@@ -27,6 +27,23 @@ body {
     justify-content: space-evenly;
     border-radius: 10px;
     box-shadow: 3px 3px 10px black;
+    border-style: solid;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background: #DFEDFA;
+    width: 380px;
+    height: 60px;
+    text-shadow: 3px 3px 7px black;
+    box-shadow: 3px 3px 10px black;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: ;
+    font-size: 40px;
+
 }
 
 .topRow {
@@ -76,3 +93,8 @@ body {
 
 .operator {
     background: #5F9F89;
+}
+
+#equals {
+    background: #ECC987;
+}
