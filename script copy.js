@@ -58,7 +58,7 @@ operator.forEach(oper => {
             // run operate() and assign to x
             displayValue.innerHTML = operate(op, x, y);
             x = displayValue.innerHTML;
-            
+            displayValue.innerHTML = x + ' = ';
             displaySolution.innerHTML = x;
         } else {
             x = displayValue.innerHTML;

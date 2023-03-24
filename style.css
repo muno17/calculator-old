@@ -57,25 +57,19 @@ body {
     box-shadow: 3px 3px 10px black;
     border-radius: 10px;
     border-style: solid;
-    font-size: 25px;
+    font-size: 30px;
 }
 
-#main {
-    display: flex;
-    width: 350px;
-    justify-content: flex-start;
-    flex: 2 1 auto;
-    flex-wrap: wrap;
-    flex-flow: column wrap;
-    padding-left: 5px;
-}
-
-#solution {
+.displayInfo {
     display: flex;
     width: 350px;
     justify-content: flex-end;
-    padding-right: 5px;
 }
+
+#main {
+    font-size: 20px;
+}
+
 
 #displayDiv {
     margin: 0;
