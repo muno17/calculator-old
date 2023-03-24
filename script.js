@@ -42,7 +42,6 @@ equals.addEventListener('click', () => {
         // store operate() return value in displayValue
         displayValue.innerHTML = operate(op, x, y);
     }
-    console.log('y = ' + y);
 });
 
 
@@ -63,7 +62,6 @@ operator.forEach(oper => {
             displayValue.innerHTML = 0;
         }
 
-
         // check which operator to assign to op
         if (oper.innerHTML === '+') {
             op = 'add';
@@ -74,9 +72,6 @@ operator.forEach(oper => {
         } else if (oper.innerHTML === '/') {
             op = 'divide';
         };
-
-        console.log('x = ' + x);
-        console.log(op)
     });
 });
 
@@ -85,7 +80,7 @@ operator.forEach(oper => {
 let posNeg = document.getElementById('posNeg');
 posNeg.addEventListener('click', () => {
     if (signX === '+' && op === 0) {
-        signX = '-'
+        signX = '-';
         if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
             displayValue.innerHTML = '-';
         } else {
@@ -104,8 +99,8 @@ posNeg.addEventListener('click', () => {
     } else if (signY === '-' && op !== 0) {
         displayValue.innerHTML = displayValue.innerHTML.slice(1, displayValue.length);
         signY = '+';
-    }
-})
+    };
+});
 
 // when clear is pressed - make valuex x=0 y=0 op=''
 let clear = document.getElementById('clear');
@@ -122,7 +117,7 @@ deleteButton.addEventListener('click', () => {
     displayValue.innerHTML = displayValue.innerHTML.slice(0, (displayValue.innerHTML.length - 1))
     if (displayValue.innerHTML.length === 0) {
         displayValue.innerHTML = 0;
-    }
+    };
 });
 
 
@@ -143,14 +138,14 @@ function operate(op, x, y) {
         } else if (y > 0) {
             z = divide(x, y);
         }
-    }
+    };
 
     // round decimals to not allow overflow
     if (z.toString().length > 14) {
         return z.toFixed(14);
     } else {
         return z;
-    }
+    };
 };
 
 function add(x, y) {
