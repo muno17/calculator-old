@@ -90,7 +90,7 @@ clear.addEventListener('click', () => {
     displayValue.innerHTML = 0;
 });
 
-//when delete is pressed - delete last digit added to displayValue
+// when delete is pressed - delete last digit added to displayValue
 let deleteButton = document.getElementById('delete');
 deleteButton.addEventListener('click', () => {
     displayValue.innerHTML = displayValue.innerHTML.slice(0, (displayValue.innerHTML.length - 1))
@@ -99,7 +99,7 @@ deleteButton.addEventListener('click', () => {
     }
 });
 
-
+// display current values
 function numberDisplay(num) {
     if (displayValue.innerHTML.length > 16) {
         return;
@@ -130,7 +130,6 @@ function operate(op, x, y) {
         }
     }
 };
-
 
 function add(x, y) {
     return x + y;
