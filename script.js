@@ -53,7 +53,8 @@ equals.addEventListener('click', () => {
 
 // ??? add keyboard functionality ???
 
-
+// change sign to + or - when +/- is pressed
+let posNeg = document.getElementById('posNeg');
 
 // when clear is pressed - make valuex x=0 y=0 op=''
 let clear = document.getElementById('clear');
