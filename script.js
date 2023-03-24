@@ -3,9 +3,10 @@ let y = 0;
 let op = 0;
 let signX = '+';
 let signY = '+'
-let displayValue = document.getElementById('display')
 
 // display current values
+let displayValue = document.getElementById('display');
+
 function numberDisplay(num) {
     if (displayValue.innerHTML.length > 14) {
         return;
@@ -21,11 +22,31 @@ function numberDisplay(num) {
 // listen for a button to be pressed
 // add buttons to displayValue until operator is pressed
 let calcNumber= document.querySelectorAll('.number');
+
 calcNumber.forEach(num => {
     num.addEventListener('click', () => numberDisplay(num.innerHTML, signX, signY))
 });
 
+// listen for next buttons to be pressed
+// add buttons to displayValue until = is pressed
+// store displayValue in variable y when = is pressed
+let equals = document.getElementById('equals');
+equals.addEventListener('click', () => {
+    // if = pressed without y value, do not do anything
+    if (x === 0 && y === 0) {
+        return;
+    } else {
+        y = displayValue.innerHTML;
 
+        // run operate() using values gathered in ^
+        // store operate() return value in displayValue
+        displayValue.innerHTML = operate(op, x, y);
+    }
+    console.log('y = ' + y);
+});
+
+
+// assign operator, run operate() if operator already exists
 let operator = document.querySelectorAll('.operator');
 operator.forEach(oper => {
     oper.addEventListener('click', () => {
@@ -62,25 +83,7 @@ operator.forEach(oper => {
     });
 });
 
-// listen for next buttons to be pressed
-// add buttons to displayValue until = is pressed
-// store displayValue in variable y when = is pressed
-let equals = document.getElementById('equals');
-equals.addEventListener('click', () => {
-    // if = pressed without y value, do not do anything
-    if (x === 0 && y === 0) {
-        return;
-    } else {
-        y = displayValue.innerHTML;
 
-        // run operate() using values gathered in ^
-        // store operate() return value in displayValue
-        displayValue.innerHTML = operate(op, x, y);
-    }
-    console.log('y = ' + y);
-});
-
-// add functionality to decimal
 // round answers, do not let decimal places overflow
 
 // ??? add keyboard functionality ???
@@ -131,8 +134,8 @@ deleteButton.addEventListener('click', () => {
 
 
 function operate(op, x, y) {
-    x = parseInt(x);
-    y = parseInt(y);
+    x = parseFloat(x);
+    y = parseFloat(y);
 
     if (op === 'add') {
         return add(x, y);
