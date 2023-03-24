@@ -12,14 +12,17 @@ body {
 
 #mainHeader {
     color: #BC81BF;
-    text-shadow: 3px 3px 8px black;
-    font-size: 80px;
+    font-size: 40px;
+    text-shadow: 3px 3px 10px white;
     margin: 0;
+    width: 350px;
+    text-align: center;
+
 }
 
 .calculator {
     width: 420px;
-    height: 500px;
+    height: 600px;
     background: #DBDBDB;
     display: flex;
     flex-direction: column;
