@@ -2,7 +2,7 @@ let x = 0;
 let y = 0;
 let op = 0;
 let signX = '+';
-let signY = '+'
+let signY = '+';
 
 // display current values
 let displayValue = document.getElementById('display');
@@ -57,10 +57,7 @@ operator.forEach(oper => {
             // run operate() and assign to x
             displayValue.innerHTML = operate(op, x, y);
             x = displayValue.innerHTML;
-
-            // ** taking value and immediately concatenating to displayValue
-
-
+            displayValue.innerHTML = 0;
         } else {
             x = displayValue.innerHTML;
             displayValue.innerHTML = 0;
@@ -83,10 +80,6 @@ operator.forEach(oper => {
     });
 });
 
-
-// round answers, do not let decimal places overflow
-
-// ??? add keyboard functionality ???
 
 // change sign to + or - when +/- is pressed
 let posNeg = document.getElementById('posNeg');
@@ -152,10 +145,12 @@ function operate(op, x, y) {
         }
     }
 
+    // round decimals to not allow overflow
     if (z.toString().length > 14) {
-        return z.toFixed(14)
+        return z.toFixed(14);
+    } else {
+        return z;
     }
-    return z;
 };
 
 function add(x, y) {
