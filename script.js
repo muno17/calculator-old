@@ -41,7 +41,7 @@ equals.addEventListener('click', () => {
 
     // run operate() using values gathered in ^
     // store operate() return value in displayValue
-    displayValue.innerHTML = 0; //operate(op, x, y);
+    displayValue.innerHTML = operate(op, x, y);
     console.log(y);
 });
 
@@ -64,7 +64,7 @@ clear.addEventListener('click', () => {
     y = 0;
     op = 0;
     displayValue.innerHTML = 0;
-})
+});
 
 //when delete is pressed - delete last digit added to displayValue
 let deleteButton = document.getElementById('delete');
@@ -73,7 +73,7 @@ deleteButton.addEventListener('click', () => {
     if (displayValue.innerHTML.length === 0) {
         displayValue.innerHTML = 0;
     }
-})
+});
 
 
 function numberDisplay(num) {
@@ -90,22 +90,33 @@ function numberDisplay(num) {
 }
 
 function operate(op, x, y) {
-    return op(x, y);
-}
+    x = parseInt(x);
+    y = parseInt(y);
+
+    if (op === 'add') {
+        return add(x, y);
+    } else if (op === 'subtract') {
+        return subtract(x, y);
+    } else if (op === 'multiply') {
+        return multiply(x, y);
+    } else if (op === 'divide') {
+        return divide(x, y);
+    }
+};
 
 
 function add(x, y) {
     return x + y;
-}
+};
 
 function subtract(x, y) {
     return x - y;
-}
+};
 
 function multiply(x, y) {
     return x * y;
-}
+};
 
 function divide(x, y) {
     return x /y;
-}
+};
