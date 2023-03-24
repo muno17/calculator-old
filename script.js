@@ -103,11 +103,7 @@ posNeg.addEventListener('click', () => {
         signX = '+';
     } else if (signY === '+' && op !== 0) {
         signY = '-'
-        if (displayValue.innerHTML.length === 1 && displayValue.innerHTML === '0') {
-            displayValue.innerHTML = '-';
-        } else {
-            displayValue.innerHTML = '-' + displayValue.innerHTML;
-        }
+        displayValue.innerHTML = displayValue.innerHTML + '-'
     } else if (signY === '-' && op !== 0) {
         displayValue.innerHTML = displayValue.innerHTML.slice(1, displayValue.length);
         signY = '+';
@@ -159,6 +155,8 @@ function operate(op, x, y) {
             z = divide(x, y);
         }
     };
+
+    signY = '+';
 
     // round decimals to not allow overflow
     if (z.toString().length > 25) {
