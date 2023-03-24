@@ -40,12 +40,14 @@ operator.forEach(oper => {
 let equals = document.getElementById('equals');
 equals.addEventListener('click', () => {
     y = displayValue.innerHTML;
+
+    // run operate() using values gathered in ^
+    // store operate() return value in displayValue
+    displayValue.innerHTML = 0;
+    console.log(y);
 });
 
 
-
-// run operate() using values gathered in ^
-// store operate() return value in displayValue
 
 // when clear is pressed - make valuex x=0 y=0 op=''
 let clear = document.getElementById('clear');
