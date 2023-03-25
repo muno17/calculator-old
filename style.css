@@ -10,7 +10,7 @@ body {
     gap: 30px;
     align-items: center;
     overflow-x: hidden;
-    flex: auto;
+    flex: 1;
     min-height: 100vh;
 }
 
